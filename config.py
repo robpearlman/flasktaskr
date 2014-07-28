@@ -16,3 +16,6 @@ SECRET_KEY = 'my_precious'
 
 DATABASE_PATH = os.path.join(basedir, DATABASE)
 
+#SQLAlchemy uri
+SQLALCHEMY_DATABASE_URI = 'sqlite:///' + DATABASE_PATH
+
