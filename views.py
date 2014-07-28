@@ -1,16 +1,16 @@
 #views.py 
-
+# ---- imports and configuration ---- #
 from flask import Flask, flash, redirect, render_template, request, \
 session, url_for, g
 from functools import wraps
 from flask.ext.sqlalchemy import SQLAlchemy
-from forms import AddTask
+from forms import AddTask, RegisterForm, LoginForm
 
 app = Flask(__name__)
 app.config.from_object('config')
 db = SQLAlchemy(app)
 
-from models import FTasks
+from models import FTasks, User
 
 def login_required(test):
 	@wraps(test)
@@ -22,17 +22,36 @@ def login_required(test):
 			return redirect(url_for('login'))
 	return wrap
 
+@app.route('/register/', methods=['GET', 'POST'])
+def  register():
+	error = None
+	form = RegisterForm(request.form, csrf_enabled=False)
+	if  form.validate_on_submit():	
+		new_user = User(
+			form.name.data,
+			form.email.data,
+			form.password.data,
+			)
+		db.session.add(new_user)
+		db.session.commit()
+		flash('Thanks for registering. Please login.')
+		return redirect(url_for('login'))
+	return render_template('register.html', form=form, error=error)
+
+
+
 @app.route('/', methods=['GET', 'POST'])
 def login():
 	error = None
 	if request.method == 'POST':
-		if request.form['username'] != app.config['USERNAME'] or \
-			request.form['password'] != app.config['PASSWORD']:
-			error = 'Invalid login and/or password! please try again'
+		u = User.query.filter_by(name=request.form['name'], password=request.form['password']).first()
+		if u is None:
+			error = 'Invalid username of password'
 		else:
 			session['logged_in'] = True
+			flash('You are logged in. Go Crazy.')
 			return redirect(url_for('tasks'))
-	return render_template('login.html', error=error)
+	return render_template('login.html', form=LoginForm(request.form), error=error)
 
 @app.route('/tasks/')
 @login_required #wrap
@@ -55,9 +74,10 @@ def  new_task():
 		db.session.commit()
 		flash('New entry successfully posted, thanks!')
 	else:
+		print request.form
+		print request.data
 		#print form.errors
 		flash('unsuccessful. why?!')
-		error = error
 	return redirect(url_for('tasks'))
 
 #mark tasks as complete:
