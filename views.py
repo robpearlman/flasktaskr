@@ -36,6 +36,10 @@ def  register():
 		db.session.commit()
 		flash('Thanks for registering. Please login.')
 		return redirect(url_for('login'))
+	else:
+		print form.validate_on_submit()
+		print request.form
+		print form.data
 	return render_template('register.html', form=form, error=error)
 
 
@@ -69,7 +73,14 @@ def  new_task():
 	print form.errors
 	if form.validate_on_submit():
 		#print form.errors
-		new_task = FTasks(form.name.data, form.due_date.data, form.priority.data, '1')
+		new_task = FTasks(
+			form.name.data, 
+			form.due_date.data, 
+			form.priority.data, 
+			form..posted_date.data,
+			'1',
+			'1'
+			)
 		db.session.add(new_task)
 		db.session.commit()
 		flash('New entry successfully posted, thanks!')

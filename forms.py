@@ -6,9 +6,9 @@ from wtforms import TextField, DateField, IntegerField, \
 from wtforms.validators import DataRequired, Email, EqualTo, Length
 
 class RegisterForm(Form):
-	name = TextField('Username', validators=[DataRequired(), Length(min=6, max=25)])
-	email = TextField('Email', validators=[DataRequired(), Length(min=6, max=40)])
-	password = PasswordField('Password', validators=[DataRequired(), Length(min=6, max=40)])
+	name = TextField('Username', validators=[DataRequired(), Length(min=4, max=25)])
+	email = TextField('Email', validators=[DataRequired(), Length(min=4, max=40)])
+	password = PasswordField('Password', validators=[DataRequired(), Length(min=4, max=40)])
 	confirm = PasswordField('Repeat Password',[DataRequired(), EqualTo('password', message='Passwords must match')])
 
 class LoginForm(Form):
@@ -24,4 +24,15 @@ class AddTask(Form):
                             choices=[('1', '1'),('2', '2'),('3', '3'),
                                         ('4', '4'),('5', '5')])
     status = IntegerField('Status')
-    #posted_date = DateField('Posted Date (mm/dd/yyyy)', validators=[DataRequired()], format='%m/%d/%Y')
+    posted_date = DateField('Posted Date (mm/dd/yyyy)', validators=[DataRequired()], format='%m/%d/%Y')
+
+
+
+
+
+
+
+
+
+
+
