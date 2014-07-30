@@ -1,6 +1,7 @@
 body {
-	font-family: sans-serif; 
-	background: #eee;
+padding: 60px 0px; 
+font-family: sans-serif; 
+background: #eee;
 }
 
 a,h1,h2{ 
@@ -122,4 +123,23 @@ h2{
 	margin: 0; 
 	text-decoration:none; 
 	position:relative;
+}
+
+.error {
+background: #F0D6D6; 
+padding: 0.5em;
+}
+
+.flash {
+background: #CEE5F5; 
+padding: 0.5em;
+}
+
+.table { 
+	background-color: white;
+}
+
+thead {
+background-color: black; 
+color: white
 }
