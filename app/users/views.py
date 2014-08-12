@@ -9,7 +9,7 @@ from app.models import User
 from sqlalchemy.exc import IntegrityError
 
 mod = Blueprint('users', __name__, url_prefix='/users',
-                    template_folder='templates/users', static_folder='static')
+                    template_folder='templates', static_folder='static')
 
 @mod.route('/logout/')
 def logout():
