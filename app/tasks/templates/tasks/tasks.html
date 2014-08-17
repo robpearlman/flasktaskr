@@ -1,8 +1,14 @@
 {% extends "template.html" %} {% block content %}
+
+
+
  <h1>Welcome to FlaskTaskr.</h1> 
+
+
+
 <div class="add-task">
     <div class="lead">Add a new task:</div>
-    <form action="{{ url_for('new_task') }}" method="post" role="form">
+    <form action="{{ url_for('tasks.new_task') }}" method="post" role="form">
         <p>{{ form.name.label }}: {{ form.name }}&nbsp;{{ form.due_date.label }}: {{ form.due_date }}&nbsp;{{ form.posted_date.label }}: {{ form.posted_date }}&nbsp;{{ form.priority.label }}: {{ form.priority }}&nbsp;
             <button class="btn btn-md btn-primary" type="submit">Submit</button>
         </p>
@@ -32,8 +38,8 @@
                 <td>{{ o.priority }}</td>
                 <td>{{ o.poster.name }}</td>
                 <td>
-<a href="{{ url_for('delete_entry', task_id = o.task_id) }}">Delete</a> -
-<a href="{{ url_for('complete', task_id = o.task_id) }}">Mark as Complete</a>
+<a href="{{ url_for('tasks.delete_entry', task_id = o.task_id) }}">Delete</a> -
+<a href="{{ url_for('tasks.complete', task_id = o.task_id) }}">Mark as Complete</a>
 
                 </td>
             </tr>{% endfor %}</tbody>
@@ -63,7 +69,7 @@
                 <td>{{ c.priority }}</td>
                 <td>{{ c.poster.name }}</td>
                 <td>
-<a href="{{ url_for('delete_entry', task_id = c.task_id)
+<a href="{{ url_for('tasks.delete_entry', task_id = c.task_id)
 }}">Delete</a> 
                 </td>
             </tr>{% endfor %}

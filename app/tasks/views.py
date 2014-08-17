@@ -7,12 +7,18 @@ from app.views import login_required, flash_errors
 from forms import AddTask
 from app.models import FTasks
 
+#
+import pdb
+
 mod = Blueprint('tasks', __name__, url_prefix='/tasks',
                    template_folder='templates', static_folder='static')
 
+
 @mod.route('/tasks/')
 @login_required
+
 def tasks():
+   #pdb.set_trace()
    open_tasks = db.session.query(FTasks).filter_by(status='1').order_by(
                    FTasks.due_date.asc())
    closed_tasks = db.session.query(FTasks).filter_by(status='0').order_by(
@@ -22,7 +28,9 @@ def tasks():
 
 @mod.route('/add/', methods=['GET', 'POST'])
 @login_required
+
 def new_task():
+   #pdb.set_trace()
    form = AddTask(request.form, csrf_enabled=False)
    if form.validate_on_submit():
        new_task = FTasks(
@@ -43,6 +51,7 @@ def new_task():
 @mod.route('/complete/<int:task_id>/',)
 @login_required
 def complete(task_id):
+   #pdb.set_trace()
    new_id = task_id
    db.session.query(FTasks).filter_by(task_id=new_id).update({"status":"0"})
    db.session.commit()
@@ -51,7 +60,9 @@ def complete(task_id):
 
 @mod.route('/delete/<int:task_id>/',)
 @login_required
+
 def delete_entry(task_id):
+   #pdb.set_trace()
    new_id = task_id
    db.session.query(FTasks).filter_by(task_id=new_id).delete()
    db.session.commit()
