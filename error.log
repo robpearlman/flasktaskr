@@ -1,1 +1,106 @@
 2014-08-16 13:35:29,586 INFO: errors [in /Users/Rob/Python/flasktaskr/app/__init__.py:22]
+2014-08-18 21:47:53,697 INFO: errors [in /Users/Rob/Python/flasktaskr/app/__init__.py:22]
+2014-08-18 22:11:22,745 ERROR: Exception on /tasks/tasks/ [GET] [in /Users/Rob/Python/flasktaskr/env/lib/python2.7/site-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/Users/Rob/Python/flasktaskr/env/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Rob/Python/flasktaskr/env/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Rob/Python/flasktaskr/env/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Rob/Python/flasktaskr/env/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Rob/Python/flasktaskr/env/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Rob/Python/flasktaskr/app/views.py", line 19, in wrap
+    return test(*args, **kwargs)
+  File "/Users/Rob/Python/flasktaskr/app/tasks/views.py", line 27, in tasks
+    open_tasks=open_tasks, closed_tasks=closed_tasks)
+  File "/Users/Rob/Python/flasktaskr/env/lib/python2.7/site-packages/flask/templating.py", line 128, in render_template
+    context, ctx.app)
+  File "/Users/Rob/Python/flasktaskr/env/lib/python2.7/site-packages/flask/templating.py", line 110, in _render
+    rv = template.render(context)
+  File "/Users/Rob/Python/flasktaskr/env/lib/python2.7/site-packages/jinja2/environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/Users/Rob/Python/flasktaskr/env/lib/python2.7/site-packages/jinja2/environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Rob/Python/flasktaskr/app/tasks/templates/tasks/tasks.html", line 1, in top-level template code
+    {% extends "template.html" %} {% block content %}
+  File "/Users/Rob/Python/flasktaskr/app/templates/template.html", line 50, in top-level template code
+    {% block content %}
+  File "/Users/Rob/Python/flasktaskr/app/tasks/templates/tasks/tasks.html", line 12, in block "content"
+    <p>{{ form.name.label }}: {{ form.name }}&nbsp;{{ form.due_date.label }}: {{ form.due_date }}&nbsp;{{ form.posted_date.label }}: {{ form.posted_date }}&nbsp;{{ form.select.label }}: {{ form.select }}&nbsp;
+  File "/Users/Rob/Python/flasktaskr/env/lib/python2.7/site-packages/jinja2/environment.py", line 397, in getattr
+    return getattr(obj, attribute)
+UndefinedError: 'app.tasks.forms.AddTask object' has no attribute 'select'
+2014-08-18 22:11:26,586 ERROR: Exception on /tasks/tasks/ [GET] [in /Users/Rob/Python/flasktaskr/env/lib/python2.7/site-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/Users/Rob/Python/flasktaskr/env/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Rob/Python/flasktaskr/env/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Rob/Python/flasktaskr/env/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Rob/Python/flasktaskr/env/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Rob/Python/flasktaskr/env/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Rob/Python/flasktaskr/app/views.py", line 19, in wrap
+    return test(*args, **kwargs)
+  File "/Users/Rob/Python/flasktaskr/app/tasks/views.py", line 27, in tasks
+    open_tasks=open_tasks, closed_tasks=closed_tasks)
+  File "/Users/Rob/Python/flasktaskr/env/lib/python2.7/site-packages/flask/templating.py", line 128, in render_template
+    context, ctx.app)
+  File "/Users/Rob/Python/flasktaskr/env/lib/python2.7/site-packages/flask/templating.py", line 110, in _render
+    rv = template.render(context)
+  File "/Users/Rob/Python/flasktaskr/env/lib/python2.7/site-packages/jinja2/environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/Users/Rob/Python/flasktaskr/env/lib/python2.7/site-packages/jinja2/environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Rob/Python/flasktaskr/app/tasks/templates/tasks/tasks.html", line 1, in top-level template code
+    {% extends "template.html" %} {% block content %}
+  File "/Users/Rob/Python/flasktaskr/app/templates/template.html", line 50, in top-level template code
+    {% block content %}
+  File "/Users/Rob/Python/flasktaskr/app/tasks/templates/tasks/tasks.html", line 12, in block "content"
+    <p>{{ form.name.label }}: {{ form.name }}&nbsp;{{ form.due_date.label }}: {{ form.due_date }}&nbsp;{{ form.posted_date.label }}: {{ form.posted_date }}&nbsp;{{ form.select.label }}: {{ form.select }}&nbsp;
+  File "/Users/Rob/Python/flasktaskr/env/lib/python2.7/site-packages/jinja2/environment.py", line 397, in getattr
+    return getattr(obj, attribute)
+UndefinedError: 'app.tasks.forms.AddTask object' has no attribute 'select'
+2014-08-18 22:11:34,398 ERROR: Exception on /tasks/tasks/ [GET] [in /Users/Rob/Python/flasktaskr/env/lib/python2.7/site-packages/flask/app.py:1423]
+Traceback (most recent call last):
+  File "/Users/Rob/Python/flasktaskr/env/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/Rob/Python/flasktaskr/env/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/Rob/Python/flasktaskr/env/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Rob/Python/flasktaskr/env/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/Rob/Python/flasktaskr/env/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/Rob/Python/flasktaskr/app/views.py", line 19, in wrap
+    return test(*args, **kwargs)
+  File "/Users/Rob/Python/flasktaskr/app/tasks/views.py", line 27, in tasks
+    open_tasks=open_tasks, closed_tasks=closed_tasks)
+  File "/Users/Rob/Python/flasktaskr/env/lib/python2.7/site-packages/flask/templating.py", line 128, in render_template
+    context, ctx.app)
+  File "/Users/Rob/Python/flasktaskr/env/lib/python2.7/site-packages/flask/templating.py", line 110, in _render
+    rv = template.render(context)
+  File "/Users/Rob/Python/flasktaskr/env/lib/python2.7/site-packages/jinja2/environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/Users/Rob/Python/flasktaskr/env/lib/python2.7/site-packages/jinja2/environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/Rob/Python/flasktaskr/app/tasks/templates/tasks/tasks.html", line 1, in top-level template code
+    {% extends "template.html" %} {% block content %}
+  File "/Users/Rob/Python/flasktaskr/app/templates/template.html", line 50, in top-level template code
+    {% block content %}
+  File "/Users/Rob/Python/flasktaskr/app/tasks/templates/tasks/tasks.html", line 12, in block "content"
+    <p>{{ form.name.label }}: {{ form.name }}&nbsp;{{ form.due_date.label }}: {{ form.due_date }}&nbsp;{{ form.posted_date.label }}: {{ form.posted_date }}&nbsp;{{ form.select.label }}: {{ form.select }}&nbsp;
+  File "/Users/Rob/Python/flasktaskr/env/lib/python2.7/site-packages/jinja2/environment.py", line 397, in getattr
+    return getattr(obj, attribute)
+UndefinedError: 'app.tasks.forms.AddTask object' has no attribute 'select'
+2014-08-18 22:53:21,267 INFO: errors [in /Users/Rob/Python/flasktaskr/app/__init__.py:22]
+2014-08-18 22:54:13,776 INFO: errors [in /Users/Rob/Python/flasktaskr/app/__init__.py:22]
+2014-08-18 22:54:26,194 INFO: errors [in /Users/Rob/Python/flasktaskr/app/__init__.py:22]
+2014-08-18 22:54:35,802 INFO: errors [in /Users/Rob/Python/flasktaskr/app/__init__.py:22]
+2014-08-18 23:04:30,353 INFO: errors [in /Users/Rob/Python/flasktaskr/app/__init__.py:22]

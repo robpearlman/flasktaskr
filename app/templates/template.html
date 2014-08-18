@@ -8,7 +8,10 @@
     <meta name="author" content="">
     <title>Welcome to FlaskTaskr!!!</title>
     <!-- styles -->
-    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
+    <!--<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet"> -->
+
+    <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.2.0/darkly/bootstrap.min.css" rel="stylesheet">
+
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <link href="{{ url_for('static', filename='css/datepicker.css') }}" rel="stylesheet">
   </head>
@@ -38,7 +41,7 @@
     <div class="container">
       <div class="content">
         {% for message in get_flashed_messages() %}
-          <div class=flash>{{ message }}</div>
+          <div class="alert alert-dismissable alert-info">{{ message }}</div>
           <br>
         {% endfor %}
         {% if error %}

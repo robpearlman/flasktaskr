@@ -1,16 +1,19 @@
 body {
-padding: 60px 0px; 
-font-family: sans-serif; 
-background: #eee;
+  padding: 60px 0px;
+  background: #222222;
+}
+
+.footer {
+ padding-top: 30px;
+}
+
+.error {
+  color: red;
+  font-size: .8em;
 }
 
 a,h1,h2{ 
 	color: #377BA8;
-}
-
-h1,h2{
-	font-family: 'Georgia', serif; 
-	margin: 0;
 }
 
 h1{
@@ -19,6 +22,10 @@ h1{
 
 h2{
 	font-size: 1.5em;
+}
+
+tbody {
+color:#377BA8;
 }
 
 .page {
@@ -74,7 +81,7 @@ h2{
 }
 
 .datagrid {
-	background: #fff; 
+	background: #eee; 
 	overflow: hidden;
 	border: 1px solid #000000; 
 	border-radius: 3px;
@@ -85,7 +92,7 @@ h2{
 }
 
 .datagrid table thead th { 
-	background-color:#000000; 
+	background-color:#eee; 
 	color:#FFFFFF; font-size: 15px; 
 	font-weight: bold;
 }
@@ -95,7 +102,7 @@ h2{
 }
 
 .datagrid table tbody td { 
-	color: #000000;
+	color: #eee;
 	border-left: 1px solid #E1EEF4; 
 	font-size: 12px;
 	font-weight: normal; 
@@ -103,7 +110,7 @@ h2{
 
 .datagrid table tbody .alt td { 
 	background: #E1EEF4;
-	color: #000000;
+	color: #eee;
 }
 
 .datagrid table tbody td:first-child {

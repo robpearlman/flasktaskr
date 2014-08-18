@@ -32,7 +32,7 @@ def login():
             session['user_id'] = u.id
             flash('You are logged in. Go Crazy.')
             return redirect(url_for('tasks.tasks'))
-
+    request.form.priority = '4'
     return render_template("users/login.html",
                            form = LoginForm(request.form),
                            error = error)
